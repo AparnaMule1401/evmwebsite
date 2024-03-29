@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import TextAnimation from "./componants/textAnimation";
 import Navbar from "./componants/navbar";

@@ -83,10 +83,11 @@ export const review = [
     }
 ]
 export const properties = [
+   
     {
         id: 1,
         image: '/images/property/s1.jpeg',
-        name: 'AUDI',
+        name: 'BMW',
         Model: "E-Tron",
         Type: 'Automatic',
         Range: '436km',
@@ -153,7 +154,10 @@ export const propertiesDetails = [
         Type: 'Automatic',
         Range: '436km',
         price: 400000,
-        button:'next',
+        Location: 'Pune',
+        bodytype: 'SUV',
+        kilometersDriven: 300,
+        colour: 'Red',
     },
     {
         id: 2,
@@ -163,7 +167,10 @@ export const propertiesDetails = [
         Type: 'Automatic',
         Range: '500km',
         price: 379999,
-        button:'next',
+        Location: 'Mumbai',
+        bodytype: 'SUV',
+        kilometersDriven: 500,
+        colour: 'Silver',
     },
     {
         id: 3,
@@ -173,7 +180,10 @@ export const propertiesDetails = [
         Type: 'Automatic',
         Range: '100km',
         price: 50000,
-        button:'next',
+        Location: 'Pune',
+        bodytype: 'Sedan',
+        kilometersDriven: 400,
+        colour: 'Blue',
         
     },
     {
@@ -184,7 +194,11 @@ export const propertiesDetails = [
         Type: 'Automatic',
         Range: '200km',
         price: 47000,
-        button:'next',
+        Location: 'Pune',
+        bodytype: 'Sedan',
+        kilometersDriven: 200,
+        colour: 'Gold',
+        
     },
     {
         id: 5,
@@ -194,7 +208,10 @@ export const propertiesDetails = [
         Type: 'Automatic',
         Range: '300km',
         price: 50000,
-        button:'next'
+        Location: 'Pune',
+        bodytype: 'Hatchback',
+        kilometersDriven: 300,
+        colour: 'Grey',
     },
     {
         id: 6,
@@ -204,39 +221,49 @@ export const propertiesDetails = [
         Type: 'Automatic',
         Range: '436km',
         price: 500000,
-        button:'next'
+        Location: 'Pune',
+        bodytype: 'SUV',
+        kilometersDriven: 600,
+        colour: 'Silver',
     }
 ];
 export const BikeDetails = [
     {
         id: 2,
         image: '/images/property/b1.jpeg',
-        name: 'Scott Bike',
+        name: 'Scott',
         Model: 'Solace',
         Type: 'Manual',
         Range: '70km',
         price: 47999,
-        button:'next',
+        Location: 'Pune',
+        bodytype: 'Mountain',
+        colour: 'Orange',
+        
     },
     {
         id: 5,
         image: '/images/property/b2.jpeg',
-        name: 'Scott Strike',
+        name: 'Scott',
         Model: 'Strike',
         Type: 'Manual',
         Range: '80km',
         price: 19999,
-        button:'next',
+        Location: 'Pune',
+        bodytype: 'Folding',
+        colour: 'Green',
     },
     {
         id: 3,
         image: "/images/property/p1.jpeg",
-        name: 'triumph-e',
+        name: 'Triumph',
         Model: 'e ',
         Type: 'Manual',
         Range: '70km',
         price: 40000,
-        button:'next',
+        Location: 'Pune',
+        bodytype: 'Mountain',
+        colour: 'Silver',
         
     },
     {
@@ -247,7 +274,9 @@ export const BikeDetails = [
         Type: 'Manual',
         Range: '90km',
         price: 47000,
-        button:'next',
+        Location: 'Pune',
+        bodytype: 'Folding',
+        colour: 'Black',
     },
     {
         id: 5,
@@ -257,7 +286,9 @@ export const BikeDetails = [
         Type: 'Manual',
         Range: '60km',
         price: 30000,
-        button:'next'
+        Location: 'Pune',
+        bodytype: 'Mountain',
+        colour: 'White',
     },
     {
         id: 6,
@@ -267,7 +298,9 @@ export const BikeDetails = [
         Type: 'Manual',
         Range: '36km',
         price: 500000,
-        button:'next'
+        Location: 'Pune',
+        bodytype: 'Sports',
+        colour: 'Black',
     }
 ];
 export const scooterDetails = [
@@ -279,6 +312,10 @@ export const scooterDetails = [
         Type: 'Automatic',
         Range: '100km',
         price: 47999,
+        kilometersDriven: 100,
+        Location: 'Pune',
+        bodytype: 'Road',
+        colour: 'Black',
         
     },
     {
@@ -289,6 +326,10 @@ export const scooterDetails = [
         Type: 'Automatic',
         Range: '400km',
         price: 45000,
+        kilometersDriven: 200,
+        Location: 'Mumbai',
+        bodytype: 'Sports',
+        colour: 'Orange',
         
     },
     {
@@ -298,6 +339,10 @@ export const scooterDetails = [
         Type: 'Automatic',
         Range: '100km',
         price: 50000,
+        kilometersDriven: 300,
+        Location: 'Pune',
+        bodytype: 'Road',
+        colour: 'Red',
         
         
     },
@@ -309,7 +354,10 @@ export const scooterDetails = [
         Type: 'Automatic',
         Range: '200km',
         price: 47000,
-        button:'next',
+        kilometersDriven: 600,
+        Location: 'Pune',
+        bodytype: 'Sports',
+        colour: 'Silver',
     },
     {
         id: 5,
@@ -319,7 +367,10 @@ export const scooterDetails = [
         Type: 'Automatic',
         Range: '300km',
         price: 50000,
-        button:'next'
+        kilometersDriven: 400,
+        Location: 'Pune',
+        bodytype: 'Road',
+        colour: 'Grey',
     },
     {
         id: 6,
@@ -329,7 +380,10 @@ export const scooterDetails = [
         Type: 'Automatic',
         Range: '436km',
         price: 500000,
-        button:'next'
+        kilometersDriven: 600,
+        Location: 'Pune',
+        bodytype: 'Sport',
+        colour: 'Black',
     }
 ];
 export const blogList = [
@@ -434,7 +488,7 @@ export const conatctDetails = [
     {
         title:'Location',
         description:'The phrasal sequence of the is now so that many campaign and benefit',
-        contact:'C/54 Northwest Freeway, Suite 558,  Houston, USA 485',
+        contact:'Hinjewadi Phase1 ,Pune',
         Icon:FiMapPin
     },
 ]

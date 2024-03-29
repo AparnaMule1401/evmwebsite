@@ -13,7 +13,7 @@ export default function Sell(){
         <>
           <Navbar navClass="navbar-white" />
           <section
-                style={{ backgroundImage: "url('/images/bg/01.jpg')" }}
+                style={{ backgroundImage: "url('/images/bg/b15.jpg')" }}
                 className="relative table w-full py-32 lg:py-36 bg-no-repeat bg-center bg-cover">
                 <div className="absolute inset-0 bg-black opacity-80"></div>
                 <div className="container">

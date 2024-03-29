@@ -1,48 +1,73 @@
-import React from "react";
-import Image from "next/image";
+"use client";
+// Importing React and necessary components
+import React, { useState } from "react";
+import Link from "next/link"; // Import Link from Next.js
 
+// Importing Navbar, Footer, and Switcher components
 import Navbar from "../componants/navbar";
 import Footer from "../componants/footer";
 import Switcher from "../componants/switcher";
-import About from "../componants/about";
-import Property from "../componants/property";
-import Client from "../componants/client";
-import Feature from "../componants/feature";
-import GetInTuch from "../componants/get-in-touch";
-import VideoModal from "../componants/videoModal";
-import SearchTab from "../componants/searchTab";
 
- export default function IndexFour(){
-    return(
-        <>
-          <Navbar/>
-          <section className="relative py-40 lg:h-screen flex justify-center items-center bg-green-600/10">
-                <div className="container">
-                    <div className="grid md:grid-cols-2 gap-[30px] mt-10 items-center">
-                        <div className="md:text-start text-center">
-                            <h1 className="font-bold lg:leading-normal leading-normal text-4xl lg:text-5xl mb-6">Find Your <span className="text-green-600">Perfect <br /> & Wonderful</span> Home</h1>
-                            <p className="text-slate-400 text-xl max-w-xl">A great plateform to buy, sell and rent your properties without any agent or commisions.</p>
-                            <SearchTab/>
-                        </div>
+// Defining the IndexFour component
+export default function IndexFour() {
+  // State to hold the current time value
+  const [time, setTime] = useState(1);
 
-                        <div className="relative lg:ms-10">
-                            <div className="p-5 shadow dark:shadow-gray-700 rounded-t-full bg-white dark:bg-slate-900">
-                                <Image src="/images/hero.jpg" className="shadow-md rounded-t-full rounded-md" alt="" width={0} height={0} sizes="100vw" style={{width:"100%", height:"auto"}} priority />
-                            </div>
-                            <VideoModal/>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section className="relative md:pb-24 pb-16">
-                <About />
-                <Feature />
-                <Property />
-                <Client />
-               <GetInTuch/>
-            </section>  
-            <Footer />
-            <Switcher />
-        </>
-    )
- }
+  // Function to handle decrementing time by 1 hour
+  const decrementTime = () => {
+    if (time > 1) {
+      setTime(time - 1);
+    }
+  };
+
+  // Function to handle incrementing time by 1 hour
+  const incrementTime = () => {
+    if (time < 24) {
+      setTime(time + 1);
+    }
+  };
+
+  return (
+    <>
+      {/* Rendering the Navbar component */}
+      <Navbar />
+      {/* Main section */}
+      <section className="relative py-40 lg:h-screen flex justify-center items-center bg-green-600/10">
+        <div className="container">
+          {/* Form section */}
+          <section className="relative md:pb-24 pb-16">
+            {/* Styling the "At what date do you need?" heading */}
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">At what date do you need?</h2>
+            <input type="date" />
+            {/* Styling the "How much time do you need?" heading */}
+            <h2 className="text-3xl lg:text-4xl font-bold mt-8 mb-4">How much time do you need?</h2>
+            <div className="flex items-center">
+              {/* Range input for selecting time */}
+              <input
+                type="range"
+                min="1"
+                max="24"
+                value={time}
+                onChange={(e) => setTime(parseInt(e.target.value))}
+                className="w-full mr-4 appearance-none"
+              />
+              {/* Buttons for decrementing and incrementing time */}
+              <button onClick={decrementTime} className="bg-green-500 text-white px-4 py-2 rounded mr-2 hover:bg-green-600">-</button>
+              <div className="w-8 text-center">{time}</div> {/* Display the current value */}
+              <button onClick={incrementTime} className="bg-green-500 text-white px-4 py-2 rounded ml-2 hover:bg-green-600">+</button>
+            </div>
+            <p>Starting at give price</p>
+            {/* Styling the button with green color */}
+            <button className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+              <Link href="/index-three">Choose a ride</Link>
+            </button>
+          </section>
+        </div>
+      </section>
+      {/* Rendering the Footer component */}
+      <Footer />
+      {/* Rendering the Switcher component */}
+      <Switcher />
+    </>
+  );
+}

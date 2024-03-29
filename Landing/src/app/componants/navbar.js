@@ -6,6 +6,8 @@ import BuyPopup from '/src/app/buy/page.js';
 import { User } from 'react-feather';
 import { usePathname } from "next/navigation";
 
+
+
 export default function Navbar(props) {
     let { navClass, topnavClass } = props;
     
@@ -39,7 +41,7 @@ export default function Navbar(props) {
         return()=>{
             window.removeEventListener('scroll', windowScroll )
         }
-      }, []);
+      }, [current]);
 
 
     const toggleMenu = () => {
@@ -67,13 +69,13 @@ export default function Navbar(props) {
                 <div className={`${topnavClass !== '' && topnavClass !== undefined ? 'container-fluid md:px-8 px-3' : 'container'}`}>
                     {/* <!-- Logo container--> */}
                     {navClass === '' || navClass === undefined ?
-                        <Link className="logo" href="/">
+                        <Link className="logo" href="">
             
                             <Image src="/images/logo.png" className="inline-block dark:hidden" alt="" width={98} height={24}/>
                             <Image src="/images/logo.png" className="hidden dark:inline-block" alt="" width={98} height={24} />
                             <span className="font-bold">Electrify eV</span>
                         </Link> :
-                        <Link className="logo" href="#">
+                        <Link className="logo" href="/">
                             <span className="inline-block dark:hidden">
                                 <Image src="/images/logo.png" className="l-dark"  alt="" width={98} height={24}/>
                                 <Image src="/images/logo.png" className="l-light"  alt="" width={98} height={24}/>
@@ -84,6 +86,7 @@ export default function Navbar(props) {
                     {/* <!-- End Logo container--> */}
 
                     {/* <!-- Start Mobile Toggle --> */}
+                
                     <div className="menu-extras">
                         <div className="menu-item">
                             <Link href="#" className="navbar-toggle" id="isToggle" onClick={toggleMenu}>
@@ -115,12 +118,7 @@ export default function Navbar(props) {
                                 <Link href="#" onClick={(e)=>{setSubManu(subManu === "/index-item" ? "" : "/index-item")}}>Home</Link><span className="menu-arrow"></span>
                                 <ul className={`submenu ${["/", "/index-two", "/index-three", "/index-four", "/index-five", "/index-six","/index-seven","/index-item"].includes(subManu) ? 'open' : ''}`}>
                                     <li className={manu ===  "/" ? 'active' : '' }><Link href="/" className="sub-menu-item">Hero One</Link></li>
-                                    <li className={manu ===  "/index-two" ? 'active' : '' }><Link href="/index-two" className="sub-menu-item">Hero Two</Link></li>
-                                    <li className={manu ===  "/index-three" ? 'active' : '' }><Link href="/index-three" className="sub-menu-item">Hero Three</Link></li>
-                                    <li className={manu ===  "/index-four" ? 'active' : '' }><Link href="/index-four" className="sub-menu-item">Hero Four</Link></li>
-                                    <li className={manu ===  "/index-five" ? 'active' : '' }><Link href="/index-five" className="sub-menu-item">Hero Five </Link></li>
-                                    <li className={manu ===  "/index-six" ? 'active' : '' }><Link href="/index-six" className="sub-menu-item">Hero Six <span className="bg-yellow-500 inline-block text-white text-[10px] font-bold px-2.5 py-0.5 rounded h-5 ms-1">New</span></Link></li>
-                                    <li className={manu ===  "/index-seven" ? 'active' : '' }><Link href="/index-seven" className="sub-menu-item">Hero Seven <span className="bg-yellow-500 inline-block text-white text-[10px] font-bold px-2.5 py-0.5 rounded h-5 ms-1">New</span></Link></li>
+                                   
                                 </ul>
                             </li>
                             
@@ -141,13 +139,13 @@ export default function Navbar(props) {
                                     <li className={`has-submenu parent-menu-item ${["/list", "/list-sidebar", "/list-map"].includes(manu) ? 'active' : ''}`}><Link href="/list" onClick={() =>{setSubManu(subManu === "/list-view-item" ? "" : "/list-view-item")}}> Rent Your eV </Link>
                                    
                                     </li>
-                                    <li className={`has-submenu parent-menu-item ${["/property-detail/1"].includes(manu) ? 'active' : ''}`}><Link href="#" onClick={() =>{setSubManu(subManu === "/property-item" ? "" : "/property-item")}}> eVServices </Link><span className="submenu-arrow"></span>
-                                        <ul className={`submenu ${["/property-detail/1", "/property-item"].includes(subManu) ? 'open' : ''}`}>
-                                            <li className={manu ===  "/property-detail/1" ? 'active' : '' }><Link href="/property-detail/1" className="sub-menu-item">Battery Swap</Link></li>
-                                            <li className={manu ===  "/property-detail/1" ? 'active' : '' }><Link href="/property-detail/1" className="sub-menu-item">Battery Charge</Link></li>
-                                            <li className={manu ===  "/property-detail/1" ? 'active' : '' }><Link href="/property-detail/1" className="sub-menu-item">Emergency Assistence</Link></li>
-                                            <li className={manu ===  "/property-detail/1" ? 'active' : '' }><Link href="/property-detail/1" className="sub-menu-item">Repair</Link></li>
-                                            <li className={manu ===  "/property-detail/1" ? 'active' : '' }><Link href="/property-detail/1" className="sub-menu-item">Vehicle Wash</Link></li>
+                                    <li className={`has-submenu parent-menu-item ${["/batteryswap"].includes(manu) ? 'active' : ''}`}><Link href="#" onClick={() =>{setSubManu(subManu === "/property-item" ? "" : "/property-item")}}> eVServices </Link><span className="submenu-arrow"></span>
+                                        <ul className={`submenu ${["/batteryswap", "/property-item","/carwash","/BatteryCharge","Emergencyassistance","Repair"].includes(subManu) ? 'open' : ''}`}>
+                                            <li className={manu ===  "/batteryswap" ? 'active' : '' }><Link href="/batteryswap" className="sub-menu-item">Battery Swap</Link></li>
+                                            <li className={manu ===  "/BatteryCharge" ? 'active' : '' }><Link href="/BatteryCharge" className="sub-menu-item">Battery Charge</Link></li>
+                                            <li className={manu ===  "/Emergencyassistance" ? 'active' : '' }><Link href="/Emergencyassistance" className="sub-menu-item">Emergency Assistence</Link></li>
+                                            <li className={manu ===  "/Repair" ? 'active' : '' }><Link href="/Repair" className="sub-menu-item">Repair</Link></li>
+                                            <li className={manu ===  "/carwash" ? 'active' : '' }><Link href="/carwash" className="sub-menu-item">Vehicle Wash</Link></li>
                                         </ul>
                                     </li>
                                 </ul>

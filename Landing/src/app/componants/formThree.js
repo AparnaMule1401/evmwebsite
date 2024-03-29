@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from "react"
+import Link from "next/link";
 import { FaMapMarkerAlt, MdDirectionsCar, LuCircleDollarSign } from '../assets/icons/vander'
 
 export default function FormThree() {
@@ -12,15 +13,15 @@ export default function FormThree() {
     return (
         <div className="grid grid-cols-1">
             <ul className="inline-block sm:w-fit w-full flex-wrap justify-center text-center p-4 bg-white dark:bg-slate-900 rounded-t-xl border-b dark:border-gray-800" id="myTab" data-tabs-toggle="#StarterContent" role="tablist">
-                <li role="presentation" className="inline-block">
+                <li role="presentation" className="inline-block mr-2">
                     <button onClick={() => handleTabClick(0)} className={`px-6 py-2 text-base font-medium rounded-md w-full transition-all duration-500 ease-in-out ${activeTabIndex === 0 ? 'text-white bg-green-600' : 'hover:text-green-600'}`} id="buy-home-tab" data-tabs-target="#buy-home" type="button" role="tab" aria-controls="buy-home" aria-selected="true">Buy</button>
                 </li>
-                <li role="presentation" className="inline-block">
-                    <button onClick={() => handleTabClick(1)} className={`px-6 py-2 text-base font-medium rounded-md w-full transition-all duration-500 ease-in-out ${activeTabIndex === 1 ? 'text-white bg-green-600' : 'hover:text-green-600'}`} id="sell-home-tab" data-tabs-target="#sell-home" type="button" role="tab" aria-controls="sell-home" aria-selected="false">Sell</button>
-                </li>
-                <li role="presentation" className="inline-block">
-                    <button onClick={() => handleTabClick(2)} className={`px-6 py-2 text-base font-medium rounded-md w-full transition-all duration-500 ease-in-out ${activeTabIndex === 2 ? 'text-white bg-green-600' : 'hover:text-green-600'}`} id="rent-home-tab" data-tabs-target="#rent-home" type="button" role="tab" aria-controls="rent-home" aria-selected="false">Rentals</button>
-                </li>
+                <li  role="presentation" className="inline-block mr-2">
+                        <Link href="/sell" className="btn bg-green-600 hover:bg-green-700 border-green-600 dark:border-green-600 text-white rounded-md">Sell</Link>
+                     </li>
+                     <li  role="presentation" className="inline-block mr-2">
+                        <Link href="/grid-map" className="btn bg-green-600 hover:bg-green-700 border-green-600 dark:border-green-600 text-white rounded-md">Rentals</Link>
+                     </li>
             </ul>
 
             <div id="StarterContent" className="p-6 bg-white dark:bg-slate-900 rounded-ss-none rounded-se-none md:rounded-se-xl rounded-xl shadow-md dark:shadow-gray-700">

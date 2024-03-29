@@ -8,6 +8,7 @@ import Footer from '../../componants/footer'
 import Switcher from '../../componants/switcher'
 import PropertyImage from "../../componants/propertyImage";
 
+
 import {MdDirectionsCar, MdTune, MdSettingsInputComponent, FiPhone} from '../../assets/icons/vander'
 
  export default function PropertiesDetail(props){
